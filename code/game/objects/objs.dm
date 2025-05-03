@@ -96,6 +96,8 @@
 		.["plasma cutter-proof"] = "Plasma cutters cannot destroy this object."
 	if(!isitem(src) && (resistance_flags & PROJECTILE_IMMUNE))
 		.["projectile immune"] = "Projectiles cannot damage this object."
+	if(resistance_flags & BANISH_IMMUNE)
+		.[span_xenonotice("banish immune")] = "Wraiths can't banish this object."
 	if(!isxeno(user) && !isobserver(user))
 		return // humans can check the codex for most of these- xenos should be able to know them "in the moment"
 	if(resistance_flags & CRUSHER_IMMUNE)
