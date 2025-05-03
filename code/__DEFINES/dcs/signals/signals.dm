@@ -732,7 +732,8 @@
 	/// Do not do the spin animation when landing
 	#define ZIMPACT_NO_SPIN (1<<2)
 
-
+#define COMSIG_XENOMORPH_WRAITH_RECALL "xenomorph_wraith_recall"
+	#define COMPONENT_BANISH_TARGETS_EXIST (1<<0)
 
 //mob/living/carbon signals
 #define COMSIG_CARBON_SETAFKSTATUS "carbon_setafkstatus"		//from base of /mob/living/set_afk_status(): (new_status, afk_timer)
