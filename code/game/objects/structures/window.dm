@@ -657,6 +657,7 @@
 	max_integrity = 200
 	//icon_state = "rwindow0_debug" //Uncomment to check hull in the map editor
 	icon_state = "window-invincible"
+	resistance_flags = BANISH_IMMUNE
 
 /obj/structure/window/framed/prison/reinforced/hull/Initialize(mapload)
 	. = ..()
