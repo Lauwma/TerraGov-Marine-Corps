@@ -10,7 +10,7 @@
 	bubble_icon = "alienroyal"
 	icon = 'icons/Xeno/castes/hivemind.dmi'
 	status_flags = GODMODE | INCORPOREAL
-	resistance_flags = RESIST_ALL
+	resistance_flags = RESIST_ALL|BANISH_IMMUNE
 	density = FALSE
 	a_intent = INTENT_HELP
 	health = 1000
