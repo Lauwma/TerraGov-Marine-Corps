@@ -505,6 +505,8 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 /datum/action/ability/xeno_action/portal/action_activate()
 	. = ..()
 	qdel(portal_one)
+	if(xeno_owner.do_actions || !do_after(xeno_owner, 10, NONE, target, BUSY_ICON_DANGER))
+		return
 	portal_one = new(get_turf(owner))
 	succeed_activate()
 	add_cooldown()
@@ -516,6 +518,8 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 	if(!can_use_action())
 		return
 	qdel(portal_two)
+	if(xeno_owner.do_actions || !do_after(xeno_owner, 10, NONE, target, BUSY_ICON_DANGER))
+		return
 	portal_two = new(get_turf(owner), TRUE)
 	succeed_activate()
 	add_cooldown()
