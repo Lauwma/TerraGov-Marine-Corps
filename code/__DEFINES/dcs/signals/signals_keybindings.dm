@@ -277,6 +277,9 @@
 #define COMSIG_XENOABILITY_UNRELENTING_FORCE "xenoability_unrelenting_force"
 #define COMSIG_XENOABILITY_UNRELENTING_FORCE_SELECT "xenoability_unrelenting_force_select"
 #define COMSIG_XENOABILITY_PSYCHIC_VORTEX "xenoability_psychic_vortex"
+#define COMSIG_XENOABILITY_BLINK "xenoability_blink"
+#define COMSIG_XENOABILITY_BANISH "xenoability_banish"
+#define COMSIG_XENOABILITY_RECALL "xenoability_recall"
 
 #define COMSIG_XENOABILITY_RAVAGER_CHARGE "xenoability_ravager_charge"
 #define COMSIG_XENOABILITY_RAVAGE "xenoability_ravage"
