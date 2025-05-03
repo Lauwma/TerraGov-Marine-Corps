@@ -38,6 +38,9 @@
 	turf_type = /turf/open/space/transit
 	pre_cordon_distance = 7
 
+/datum/turf_reservation/banish
+	turf_type = /turf/closed/banish_space
+
 /area/drop_transition
 	base_lighting_alpha = 255
 
