@@ -227,12 +227,12 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 		stasis_target.overlay_fullscreen("banish", /atom/movable/screen/fullscreen/blind) //Force the blind overlay
 
 	if(!reserved_area) //If we don't have a reserved area, set one
-		reserved_area = SSmapping.RequestBlockReservation(3,3, SSmapping.transit.z_value, /datum/turf_reservation/banish)
+		reserved_area = SSmapping.request_turf_block_reservation(3, 3, 1, reservation_type=/datum/turf_reservation/banish)
 		if(!reserved_area) //If we *still* don't have a reserved area we've got a problem
 			CRASH("failed to reserve an area for [owner]'s Banish.")
 
 	var/turf/target_turf = reserved_area.reserved_turfs[5]
-	new /area/arrival(target_turf) //So we don't get instagibbed from the space area
+	new/area/arrival(target_turf) //So we don't get instagibbed from the space area
 
 	if(isxeno(banishment_target)) //If we're a xeno, disgorge all vored contents
 		var/mob/living/carbon/xenomorph/xeno_target = banishment_target
@@ -505,7 +505,7 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 /datum/action/ability/xeno_action/portal/action_activate()
 	. = ..()
 	qdel(portal_one)
-	if(xeno_owner.do_actions || !do_after(xeno_owner, 10, NONE, target, BUSY_ICON_DANGER))
+	if(xeno_owner.do_actions || !do_after(xeno_owner, 50, NONE, target, BUSY_ICON_DANGER))
 		return
 	portal_one = new(get_turf(owner))
 	succeed_activate()
@@ -518,7 +518,7 @@ GLOBAL_LIST_INIT(wraith_banish_very_short_duration_list, typecacheof(list(
 	if(!can_use_action())
 		return
 	qdel(portal_two)
-	if(xeno_owner.do_actions || !do_after(xeno_owner, 10, NONE, target, BUSY_ICON_DANGER))
+	if(xeno_owner.do_actions || !do_after(xeno_owner, 50, NONE, target, BUSY_ICON_DANGER))
 		return
 	portal_two = new(get_turf(owner), TRUE)
 	succeed_activate()
